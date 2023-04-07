@@ -4,13 +4,16 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-      "test": "cypress run --record --key 91ae9c18-8647-438a-8a6a-dbe5ce5f92d6"
+    "test:login": "cypress run --record --key e3c21a0d-139d-48e1-b5f1-a7dffbfbf958 --ci-build-id=1 --group login --spec cypress/e2e/loginAdminTest.cy.js",
+    "test:main": "cypress run --record --key e3c21a0d-139d-48e1-b5f1-a7dffbfbf958 --ci-build-id=1 --group main --spec cypress/e2e/mainPageTest.cy.js",
+    "test:booking": "cypress run --record --key e3c21a0d-139d-48e1-b5f1-a7dffbfbf958 --ci-build-id=1 --group booking --spec cypress/e2e/bookingMovieTest.cy.js",
+    "test:parallel": "run-p -c test:login test:main test:booking"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "devDependencies": {
-      "cypress": "^12.4.0",
-      "npm-run-all": "^4.1.5"
+        "cypress": "^12.4.0",
+        "npm-run-all": "^4.1.5"
     }
-  }
+}
